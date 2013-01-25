@@ -1,0 +1,62 @@
+extends layout
+
+block content
+	nav
+		ul(class="main-menu")
+			li
+				a(href="", ng-click="newPersonalProject()", class="btn-add-new-task") New project
+	
+	span(class="project-name")= name
+
+	div(class="item-list")
+		div(ng-repeat="project in projects")
+			div
+				a(ng-href="/{{project.hash}}/") {{project.name}}
+
+	div(class="new-project-overlay", ng-class="{open: newProjectForm}", ng-click="cancelNewProject()")
+	div(class="new-project-window", ng-class="{open: newProjectForm}")
+		div.part-win
+			div.new-project-part(ng-class="{open: !projectCreated}")
+				header(class="new-project-window-header")
+					h2 New project
+				div(class="new-project-window-content")
+					form(method="post", ng-submit="createNewProject()")
+						div
+							
+							input(type="text", class="new-project-name", placeholder="Project name", ng-model="newProjectName")
+							p(ng-show="newProjectEmptyName") You have to set project name! Thanks!
+						div
+							div.btn-new-project-wrap
+								input(type="submit", class="btn-new-project btn-save", value="Start new project")
+							span(ng-show="newProjectLoading") Loading...
+
+							div.check-area
+								div.switch-area
+									div.switch-public
+									div.switch-private
+								div.switch-btn(ng-click="toggleProjectState()", ng-class="{check: ispersonal}")
+									div.switch-btn-inside
+
+							div.check-info(ng-class="{private: !ispersonal}")
+								div.public-info(ng-class="{active: !ispersonal}")
+									span Public
+								div.private-info(ng-class="{active: ispersonal}")
+									span Private
+
+							if email==''
+								div.sign-in(ng-class="{open: ispersonal}")
+									p You have to 
+										a(href="/auth/twitter", class="sign-in-btn") Sign in with Twitter
+
+							p(class="tip")
+								em Tip:
+								span You can use #hashtags for filtering tasks. 
+
+			div.project-part(ng-class="{open: projectCreated}")
+				header(class="new-project-window-header")
+					h2 Project ready
+
+				div(class="new-project-window-content")
+					p(class="motto") Your project is now on location:
+					p(class="motto")
+						a(href="http://www.scrummaster.cz/{{projectHash}}/", class="sign-in-btn") www.scrummaster.cz/{{projectHash}}/

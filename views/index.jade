@@ -1,0 +1,125 @@
+extends layout
+
+block content
+	nav
+		ul(class="main-menu")
+			li
+				a(href="", ng-click="newTask()", class="btn-add-new-task") Add new task
+			li
+				a(href="", ng-click="newProject()") New project
+	
+	span(class="project-name") 
+		{{projectName}} 
+		a(href="/dashboard")= name
+
+	div(class="filter-warning", ng-class="{open: hashFilter!=''}")
+			p Filter: {{hashFilter}}
+				a(href="", class="btn-save", ng-click="removeTagFilter()") Remove filter
+
+	div(class="item-list", ng-class="{filteropen: hashFilter!=''}")
+
+		div(class="todos col", drop="dropTodo()", ondragover="allowDrop(event)")
+			h2(class="col-title") Todo
+
+			div(class="task todo", ng-repeat="task in todos", draggable="true", drag="transfer(task)", ng-class="{removed: task.isRemoved}")
+				p(ng-hide="task.editing")
+					span(ng-repeat="token in task.tokens")
+						span(ng-show="!token.isHash") {{token.value}} 
+						a(ng-show="token.isHash", ng-click="filterByHash(token.value)") {{token.value}} 
+
+				textarea(class="task-textarea", ng-model="task.name", ng-show="task.editing")
+				div(class="update-area", ng-show="task.editing")
+					a(href="", class="btn-save", ng-click="updateTaskSave(task)") Save
+					a(href="", ng-click="cancelEditing(task)", class="btn-cancel") Cancel
+				div(class="task-controls")
+					a(href="", ng-click="updateTask(task)", class="control-update", ng-hide="task.editing") Update
+					a(href="", ng-click="removeTask(task)", class="control-remove", ng-hide="task.editing") Remove
+
+			a(href="", ng-click="newTask()", ng-class="{hidden: newTaskForm}", class="btn-add-new-task-inline") Add task
+
+			div(id="new-task")
+				div(class="new-task-window task", ng-class="{open: newTaskForm}")
+					form(method="post", ng-submit="addTask()")
+						textarea(ng-model="newTaskText", placeholder="New task", id="new-task-textarea", autofocus, class="task-textarea")
+						input(type="submit", value="Save", class="btn-save")
+						a(href="", ng-click="cancelNewTask()", class="btn-cancel") Cancel
+
+		div(class="inprogress col", drop="dropProgress()", ondragover="allowDrop(event)")
+			h2(class="col-title") In progress
+			div(class="task inprogress", ng-repeat="task in inprogress", draggable="true", drag="transfer(task)", ng-class="{removed: task.isRemoved, deleted: task.isDeleted}")
+				p(ng-hide="task.editing")
+					span(ng-repeat="token in task.tokens")
+						span(ng-show="!token.isHash") {{token.value}} 
+						a(ng-show="token.isHash", ng-click="filterByHash(token.value)") {{token.value}} 
+				textarea(class="task-textarea", ng-model="task.name", ng-show="task.editing")
+				div(class="update-area", ng-show="task.editing")
+					a(href="", class="btn-save", ng-click="updateTaskSave(task)") Save
+					a(href="", ng-click="cancelEditing(task)", class="btn-cancel") Cancel
+				div(class="task-controls")
+					a(href="", ng-click="updateTask(task)", class="control-update", ng-hide="task.editing") Update
+					a(href="", ng-click="removeTask(task)", class="control-remove", ng-hide="task.editing") Remove
+				
+		div(class="todos col", drop="dropDone()", ondragover="allowDrop(event)")
+			h2(class="col-title") Done
+			div(class="task done", ng-repeat="task in dones", draggable="true", drag="transfer(task)", ng-class="{removed: task.isRemoved, deleted: task.isDeleted}")
+				p(ng-hide="task.editing")
+					span(ng-repeat="token in task.tokens")
+						span(ng-show="!token.isHash") {{token.value}} 
+						a(ng-show="token.isHash", ng-click="filterByHash(token.value)") {{token.value}} 
+				textarea(class="task-textarea", ng-model="task.name", ng-show="task.editing")
+				div(class="update-area", ng-show="task.editing")
+					a(href="", class="btn-save", ng-click="updateTaskSave(task)") Save
+					a(href="", ng-click="cancelEditing(task)", class="btn-cancel") Cancel
+				div(class="task-controls")
+					a(href="", ng-click="updateTask(task)", class="control-update", ng-hide="task.editing") Update
+					a(href="", ng-click="removeTask(task)", class="control-remove", ng-hide="task.editing") Remove
+
+	div(class="new-project-overlay", ng-class="{open: newProjectForm || !exists}", ng-click="cancelNewProject()")
+	div(class="new-project-window", ng-class="{open: newProjectForm || !exists}")
+		div.part-win
+			div.new-project-part(ng-class="{open: !projectCreated}")
+				header(class="new-project-window-header")
+					h2 hello.
+					p(class="motto") I'm free productivity and scrum tool.
+				div(class="new-project-window-content")
+					form(method="post", ng-submit="createNewProject()")
+						div
+							
+							input(type="text", class="new-project-name", placeholder="Project name", ng-model="newProjectName")
+							p(ng-show="newProjectEmptyName") You have to set project name! Thanks!
+						div
+							div.btn-new-project-wrap
+								input(type="submit", class="btn-new-project btn-save", value="Start new project")
+							span(ng-show="newProjectLoading") Loading...
+
+							div.check-area
+								div.switch-area
+									div.switch-public
+									div.switch-private
+								div.switch-btn(ng-click="toggleProjectState()", ng-class="{check: ispersonal}")
+									div.switch-btn-inside
+
+							div.check-info(ng-class="{private: !ispersonal}")
+								div.public-info(ng-class="{active: !ispersonal}")
+									span Public
+								div.private-info(ng-class="{active: ispersonal}")
+									span Private
+
+							if email==''
+								div.sign-in(ng-class="{open: ispersonal}")
+									p You have to 
+										a(href="/auth/twitter", class="sign-in-btn") Sign in with Twitter
+
+							p(class="tip")
+								em Tip:
+								span You can use #hashtags for filtering tasks. 
+
+			div.project-part(ng-class="{open: projectCreated}")
+				header(class="new-project-window-header")
+					h2 Project ready
+
+				div(class="new-project-window-content")
+					p(class="motto") Your project is now on location:
+					p(class="motto")
+						a(href="http://www.scrummaster.cz/{{projectHash}}/", class="sign-in-btn") www.scrummaster.cz/{{projectHash}}/
+					

@@ -1,0 +1,301 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"bac",
+				"background-position"
+			],
+			[
+				"mar",
+				"margin-bottom"
+			],
+			[
+				"col",
+				"col-5"
+			],
+			[
+				"ba",
+				"background-position"
+			],
+			[
+				"back",
+				"background-image"
+			],
+			[
+				"numb",
+				"numberArea"
+			],
+			[
+				"wi",
+				"window"
+			],
+			[
+				"java",
+				"javascript"
+			],
+			[
+				"pad",
+				"padding-top"
+			],
+			[
+				"co",
+				"column"
+			],
+			[
+				"com",
+				"combinations"
+			],
+			[
+				"bor",
+				"border"
+			],
+			[
+				"tran",
+				"transform"
+			],
+			[
+				"n",
+				"n"
+			],
+			[
+				"bord",
+				"border-radius"
+			],
+			[
+				"body",
+				"body-background-color"
+			],
+			[
+				"ma",
+				"max-width"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 58.0,
+		"selected_items":
+		[
+			[
+				"Package Control: insta",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: inst",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: re",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: instal",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Contro",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: lis",
+				"Package Control: List Packages"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Development/NodeJs/express/theme/views/features.jade",
+		"/C/Development/NodeJs/express/theme/public/stylesheets/style.styl",
+		"/C/Development/NodeJs/express/theme/public/stylesheets/retina.styl",
+		"/C/Development/NodeJs/express/theme/public/stylesheets/style.css",
+		"/C/Development/NodeJs/express/theme/package.json",
+		"/C/Development/NodeJs/express/theme/public/javascripts/simplenumber.coffee",
+		"/C/Development/NodeJs/express/theme/public/javascripts/simplechart.coffee",
+		"/C/Development/NodeJs/express/theme/public/javascripts/scripts.min.js",
+		"/C/Development/NodeJs/express/theme/public/javascripts/simplenumber.js",
+		"/C/Development/NodeJs/express/theme/public/javascripts/simplechart.js",
+		"/C/Development/NodeJs/express/theme/public/javascripts/simplechart.min.js",
+		"/C/Development/NodeJs/express/theme/public/javascripts/scripts.js",
+		"/C/Development/NodeJs/express/theme/views/index.jade",
+		"/C/Development/NodeJs/express/theme/views/layout.jade",
+		"/C/Users/Tomas/AppData/Roaming/Sublime Text 2/Packages/CoffeeScript/CoffeeScript.sublime-build",
+		"/C/Users/Tomas/AppData/Roaming/Sublime Text 2/Packages/CoffeeCompile/coffee_compile.py",
+		"/C/Users/Tomas/AppData/Roaming/Sublime Text 2/Packages/CoffeeCompile/CoffeeCompile.sublime-settings",
+		"/C/Development/NodeJs/express/theme/public/javascripts/simpleslider.coffee",
+		"/C/Development/NodeJs/express/theme/public/javascripts/simplecharts.coffee",
+		"/C/Development/NodeJs/express/cms/views/index.jade",
+		"/C/Development/NodeJs/express/cms/public/stylesheets/style.styl",
+		"/C/Development/NodeJs/express/cms/app.js",
+		"/C/Development/NodeJs/express/theme/public/stylesheets/variables.styl",
+		"/C/Development/NodeJs/express/theme/app.js",
+		"/C/Development/NodeJs/express/theme/routes/index.js",
+		"/C/Development/NodeJs/express/theme/views/about.jade",
+		"/C/Development/NodeJs/express/theme/views/subpagelayout.jade",
+		"/C/Development/NodeJs/express/theme/public/stylesheets/large-screens.styl",
+		"/C/Development/NodeJs/express/theme/public/stylesheets/icons.styl",
+		"/C/Development/NodeJs/express/theme/public/stylesheets/small-screens.styl",
+		"/C/Development/NodeJs/express/theme/public/stylesheets/chart.styl",
+		"/C/Development/NodeJs/express/theme/public/stylesheets/numbers.styl",
+		"/C/Development/NodeJs/express/theme/public/stylesheets/mixins.styl",
+		"/C/Development/NodeJs/express/theme/public/stylesheets/medium-screens.styl",
+		"/C/Development/NodeJs/express/theme/public/stylesheets/big-screens.styl",
+		"/C/Users/Tomas/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/C/Users/Tomas/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/C/Users/Tomas/Desktop/Theme2/scripts/scripts.js",
+		"/C/Users/Tomas/Desktop/Theme2/scripts/simpleslider.coffee",
+		"/C/Users/Tomas/Desktop/Theme2/features.html",
+		"/C/Users/Tomas/Desktop/Theme2/styles/theme.css",
+		"/C/Users/Tomas/Desktop/Theme2/index.html",
+		"/C/Users/Tomas/Desktop/Theme2/about.html"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"36px",
+			"36",
+			"icon",
+			"});",
+			"$('.numbering').each(function () {\n        var $value = $(this).find('.value');\n        var value = parseInt($value.text());\n        $value.data('current-value', value);\n        $value.text(0);\n    });",
+			"shownu",
+			"      \n",
+			"SimpleChart",
+			"showcha",
+			"simpleChart",
+			"pluginName",
+			".page",
+			"p",
+			"footer",
+			"background 200ms ease-in-out",
+			">\n",
+			"    </"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"n"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.coffeecompile_output":
+	{
+		"height": 482.0
+	},
+	"output.exec":
+	{
+		"height": 381.0
+	},
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 238.0,
+	"status_bar_visible": true
+}
